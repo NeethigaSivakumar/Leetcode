@@ -1,6 +1,7 @@
 package com.example.Array;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.PriorityQueue;
 
@@ -49,7 +50,7 @@ public class SlidingWindowMaximum {
     }
 
     public static void main(String[] args) {
-        maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7},3);
+        maxSlidingWindow2(new int[]{1,3,-1,-3,5,3,6,7},3);
 
     }
 }

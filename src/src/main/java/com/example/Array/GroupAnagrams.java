@@ -3,27 +3,18 @@ package com.example.Array;
 import java.util.*;
 
 public class GroupAnagrams {
+
     public static List<List<String>> groupAnagrams(String[] strs) {
-        Map<String,List<String>> map=new HashMap<>();
-        for(int i=0;i<strs.length;i++){
-            char[] arr=strs[i].toCharArray();
-            Arrays.sort(arr);
-            String sorted=new String(arr);
-            if(map.containsKey(sorted)){
-                List<String> l=map.get(sorted);
-                l.add(strs[i]);
-                map.put(sorted,l);
+        Map<String, List<String>> map = new HashMap<>();
+        for (String i : strs) {
+            char[] ch=new char[26];
+            for(char s:i.toCharArray()){
+                ch[s-'a']++;
             }
-            else{
-                List<String> l=new ArrayList<>();
-                l.add(strs[i]);
-                map.put(sorted,l);
-            }
+            String sorted = new String(ch);
+            map.computeIfAbsent(sorted,k-> new ArrayList<>()).add(i);
         }
-        List<List<String>> res=new ArrayList<>();
-        for(Map.Entry<String,List<String>> m:map.entrySet()){
-            res.add(m.getValue());
-        }
+        List<List<String>> res = map.values().stream().toList();
         return res;
     }
     public static void main(String[] args) {

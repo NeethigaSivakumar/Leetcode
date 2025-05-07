@@ -6,7 +6,6 @@ public class DailyTemperatures {
     public static int[] dailyTemperatures(int[] temperatures) {
         int[] res = new int[temperatures.length];
         Stack<int[]> stack = new Stack<>(); // pair: [temp, index]
-
         for (int i = 0; i < temperatures.length; i++) {
             int t = temperatures[i];
             while (!stack.isEmpty() && t > stack.peek()[0]) {
@@ -19,6 +18,6 @@ public class DailyTemperatures {
     }
 
     public static void main(String[] args) {
-        dailyTemperatures(new int[]{30,38,30,36,35,40,28});
+        dailyTemperatures(new int[]{73,74,75,71,69,72,76,73});
     }
 }
