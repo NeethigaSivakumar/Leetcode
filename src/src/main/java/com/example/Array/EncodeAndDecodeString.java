@@ -29,8 +29,35 @@ public class EncodeAndDecodeString {
         return res;
     }
     public static void main(String[] args) {
-        String encode=encode(new ArrayList<>(Arrays.asList("we","say",":","yes","!@#$%^&*()")));
-        List<String> decode=decode(encode);
+        String encode=encode1(new ArrayList<>(Arrays.asList("we","say",":","yes","!@#$%^&*()")));
+        List<String> decode=decode1(encode);
 
+    }
+
+
+    public static String encode1(List<String> list) {
+        StringBuilder sb = new StringBuilder();
+        for (String i : list) {
+            sb.append(i.length()).append("#").append(i);
+        }
+        return sb.toString();
+    }
+
+    public static List<String> decode1(String s) {
+        List<String> res=new ArrayList<>();
+        int start=0,i=0;
+        while(i<s.length()){
+            if(s.charAt(i)=='#'){
+                int length= Integer.parseInt(s.substring(start,i));
+                String t=s.substring(i+1,i+length+1);
+                res.add(t);
+                start=i+length+1;
+                i=start+1;
+            }
+            else{
+                i++;
+            }
+        }
+        return res;
     }
 }

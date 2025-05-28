@@ -1,8 +1,8 @@
-package com.example.PriorityQueue;
+package com.example.Queue;
 
 import java.util.PriorityQueue;
 
-class Solution {
+class FindKthLargest {
     public static int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int num : nums) {

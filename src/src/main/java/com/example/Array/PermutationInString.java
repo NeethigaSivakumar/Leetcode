@@ -98,8 +98,32 @@ public class PermutationInString {
         return false;
     }
 
+    public static boolean checkInclusion4(String s1, String s2) {
+        if(s1.length()>s2.length()){
+            return false;
+        }
+        int[] s1Arr=new int[26];
+        int[] s2Arr=new int[26];
+        for(int i=0;i<s1.length();i++){
+            s1Arr[s1.charAt(i)-'a']++;
+        }
+        for(int i=0;i<s2.length();i++){
+            s2Arr[s2.charAt(i)-'a']++;
+            if(i>=s1.length()){
+                s2Arr[s2.charAt(i - s1.length()) - 'a']--;
+            }
+            if(Arrays.equals(s1Arr,s2Arr)){
+                return true;
+            }
+        }
+        return false;
+
+
+
+    }
+
     public static void main(String[] args) {
-        checkInclusion1("ab","eidbaooo");
+        checkInclusion4("ab","eidbaooo");
     }
 
 
