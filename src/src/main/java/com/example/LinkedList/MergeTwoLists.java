@@ -1,8 +1,8 @@
 package com.example.LinkedList;
 //if list empty
-class Solution {
+class MergeTwoLists {
     //Time(O(n+m) Space O(n)
-    public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         if(list1==null){
             return list2;
         }
