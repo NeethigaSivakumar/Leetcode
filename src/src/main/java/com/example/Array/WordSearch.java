@@ -1,6 +1,6 @@
 package com.example.Array;
 
-class wordSearch {
+class WordSearch {
     public static boolean exist(char[][] board, String word) {
         int r=board.length,c=board[0].length;
         for(int i=0;i<r;i++){
