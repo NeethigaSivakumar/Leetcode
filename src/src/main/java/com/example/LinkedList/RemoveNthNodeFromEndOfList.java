@@ -1,6 +1,6 @@
 package com.example.LinkedList;
 
-public class RemoventhNode {
+public class RemoveNthNodeFromEndOfList {
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy=new ListNode(0);
         dummy.next=head;
