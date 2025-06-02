@@ -1,6 +1,8 @@
 package com.example.LinkedList;
 
 public class RemoveNthNodeFromEndOfList {
+
+    //Time O(n) Space O(1)
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy=new ListNode(0);
         dummy.next=head;
@@ -39,5 +41,6 @@ public class RemoveNthNodeFromEndOfList {
             h = h.next;
         }
     }
+
 
 }
