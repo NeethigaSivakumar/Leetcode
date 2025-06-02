@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MergeIntervals {
+
+    //Time O(nlogn) Space O(n)
     public static int[][] merge(int[][] intervals) {
         Arrays.sort(intervals,(a, b)->a[0]-b[0]);
         List<int[]> merged=new ArrayList<>();
