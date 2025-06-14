@@ -1,4 +1,4 @@
-package com.example.Array;
+package com.example.Intervals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
