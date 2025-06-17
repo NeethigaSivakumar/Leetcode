@@ -1,6 +1,8 @@
 package com.example.Trees;
 
 public class LCAOfBinarySearchTree {
+
+    //Time O(H) Space O(1)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         while (root != null) {
             if (p.val>root.val && q.val>root.val) {

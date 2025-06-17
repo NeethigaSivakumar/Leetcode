@@ -7,6 +7,7 @@ import java.util.Queue;
 
 public class BinaryTreeLevelOrderTraversal {
 
+    //Time O(N) Space O(N)
     public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> finalList=new ArrayList<>();
         if(root==null){
