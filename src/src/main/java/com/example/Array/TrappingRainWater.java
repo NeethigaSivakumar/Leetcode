@@ -19,7 +19,26 @@ public class TrappingRainWater {
         return maxHeight;
     }
 
+    public static int trap1(int[] height) {
+        int leftMax = height[0], rightMax = height[height.length-1], left = 0, right = height.length - 1, water = 0;
+        while (left < right) {
+            if (height[left] < height[right]) {
+                left++;
+                leftMax = Math.max(leftMax, height[left]);
+                water += leftMax - height[left];
+            } else {
+                right--;
+                rightMax = Math.max(rightMax, height[right]);
+                water += rightMax - height[right];
+            }
+        }
+        return water;
+    }
+
     public static void main(String[] args) {
-        trap(new int[]{0, 2, 0, 3, 1, 0, 1, 3, 2, 1});
+       // System.out.print(trap(new int[]{0, 2, 0, 3, 1, 0, 1, 3, 2, 1}));
+        System.out.print(trap1(new int[]{0, 2, 0, 3, 1, 0, 1, 3, 2, 1}));
+
+
     }
 }
